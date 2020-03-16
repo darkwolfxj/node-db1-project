@@ -1,13 +1,6 @@
 const express = require("express");
-
-const db = require("../data/dbConfig.js");
-
 const server = express();
-
+const router = require("../router/router")
 server.use(express.json());
-
-server.get("/", (req, res) => {
-    res.status(200).json({ data: "none" })
-})
-
+server.use("/api/accounts", router)
 module.exports = server;
